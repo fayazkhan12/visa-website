@@ -3,176 +3,172 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Indian Visa Application Portal</title>
+    <title>VisaSphere | India's Trusted Visa Consultants</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500&display=swap">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         :root {
             --saffron: #FF9933;
             --white: #FFFFFF;
             --green: #138808;
-            --navy-blue: #000080;
-            --light-blue: #E6F2FF;
-            --dark-gray: #333333;
-            --light-gray: #F5F5F5;
+            --navy: #000080;
+            --dark: #1a1a2e;
+            --gray: #f8f9fa;
+            --text: #333333;
         }
-        
+
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
-            font-family: 'Roboto', sans-serif;
+            font-family: 'Montserrat', sans-serif;
             line-height: 1.6;
-            color: var(--dark-gray);
-            background-color: var(--light-gray);
+            color: var(--text);
             overflow-x: hidden;
+            background-color: var(--white);
         }
-        
-        h1, h2, h3, h4, h5, h6 {
-            font-family: 'Poppins', sans-serif;
+
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
             font-weight: 600;
+            margin-bottom: 1rem;
         }
-        
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-        
+
         .container {
-            width: 100%;
+            width: 90%;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 15px;
         }
-        
-        /* Header Styles */
+
+        section {
+            padding: 80px 0;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 32px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: linear-gradient(to right, var(--saffron), #ff6600);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: linear-gradient(to right, #ff6600, var(--saffron));
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(255, 153, 51, 0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--navy);
+            border: 2px solid var(--navy);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--navy);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        /* Header & Navigation */
         header {
-            background: linear-gradient(to right, var(--saffron), var(--white), var(--green));
-            color: var(--dark-gray);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            position: sticky;
+            position: fixed;
             top: 0;
+            left: 0;
+            width: 100%;
             z-index: 1000;
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
         }
-        
+
         .header-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 15px 20px;
+            padding: 20px 0;
         }
-        
+
         .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--navy);
+            text-decoration: none;
             display: flex;
             align-items: center;
-            gap: 10px;
         }
-        
-        .logo-icon {
-            color: var(--navy-blue);
-            font-size: 28px;
+
+        .logo span {
+            color: var(--saffron);
         }
-        
-        .logo-text {
-            font-size: 22px;
-            font-weight: 700;
-            color: var(--navy-blue);
-        }
-        
-        .logo-text span {
+
+        .logo i {
+            margin-right: 10px;
+            font-size: 24px;
             color: var(--green);
         }
-        
+
         nav ul {
             display: flex;
             list-style: none;
-            gap: 25px;
         }
-        
+
+        nav ul li {
+            margin-left: 30px;
+        }
+
         nav ul li a {
+            text-decoration: none;
+            color: var(--dark);
             font-weight: 500;
-            transition: color 0.3s;
-            position: relative;
+            font-size: 16px;
+            transition: color 0.3s ease;
         }
-        
+
         nav ul li a:hover {
-            color: var(--navy-blue);
+            color: var(--saffron);
         }
-        
-        nav ul li a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background-color: var(--navy-blue);
-            transition: width 0.3s;
-        }
-        
-        nav ul li a:hover::after {
-            width: 100%;
-        }
-        
-        .header-actions {
-            display: flex;
-            gap: 15px;
-        }
-        
-        .btn {
-            padding: 10px 20px;
-            border-radius: 4px;
-            font-weight: 500;
-            cursor: pointer;
-            transition: all 0.3s;
-            border: none;
-            font-family: 'Poppins', sans-serif;
-        }
-        
-        .btn-primary {
-            background-color: var(--navy-blue);
-            color: white;
-        }
-        
-        .btn-primary:hover {
-            background-color: #000066;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-        
-        .btn-outline {
-            background-color: transparent;
-            color: var(--navy-blue);
-            border: 1px solid var(--navy-blue);
-        }
-        
-        .btn-outline:hover {
-            background-color: var(--navy-blue);
-            color: white;
-        }
-        
+
         .mobile-menu-btn {
             display: none;
             font-size: 24px;
             cursor: pointer;
+            color: var(--dark);
         }
-        
+
         /* Hero Section */
         .hero {
+            height: 100vh;
             position: relative;
-            height: 85vh;
-            overflow: hidden;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: white;
             text-align: center;
+            color: white;
+            overflow: hidden;
         }
-        
-        .video-background {
+
+        .hero-video {
             position: absolute;
             top: 0;
             left: 0;
@@ -181,682 +177,887 @@
             object-fit: cover;
             z-index: -2;
         }
-        
-        .flag-overlay {
+
+        .hero-overlay {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(to bottom, rgba(255, 153, 51, 0.2), rgba(255, 255, 255, 0.2), rgba(19, 136, 8, 0.2));
+            background: linear-gradient(to right, rgba(255, 153, 51, 0.2), rgba(19, 136, 8, 0.2));
             z-index: -1;
         }
-        
+
+        .chakra-watermark {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 300px;
+            height: 300px;
+            opacity: 0.1;
+            z-index: -1;
+            animation: rotate 20s linear infinite;
+        }
+
+        @keyframes rotate {
+            0% { transform: translate(-50%, -50%) rotate(0deg); }
+            100% { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+
+        .chakra-watermark svg {
+            width: 100%;
+            height: 100%;
+            fill: var(--navy);
+        }
+
         .hero-content {
             max-width: 800px;
-            padding: 30px;
-            background-color: rgba(0, 0, 0, 0.6);
-            border-radius: 10px;
-            backdrop-filter: blur(5px);
+            padding: 0 20px;
+            z-index: 1;
         }
-        
+
         .hero h1 {
-            font-size: 42px;
+            font-size: 3.5rem;
             margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
         }
-        
+
         .hero p {
-            font-size: 18px;
+            font-size: 1.2rem;
             margin-bottom: 30px;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
+            opacity: 0.9;
         }
-        
+
         .hero-btns {
             display: flex;
-            gap: 15px;
+            gap: 20px;
             justify-content: center;
-            flex-wrap: wrap;
         }
-        
-        /* Services Section */
-        .services {
-            padding: 80px 0;
-            background-color: white;
-        }
-        
+
+        /* Visa Categories */
         .section-title {
             text-align: center;
             margin-bottom: 50px;
-            color: var(--navy-blue);
-            position: relative;
         }
-        
-        .section-title::after {
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--dark);
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title h2::after {
             content: '';
             position: absolute;
             bottom: -10px;
             left: 50%;
             transform: translateX(-50%);
-            width: 100px;
+            width: 80px;
             height: 3px;
-            background: linear-gradient(to right, var(--saffron), var(--white), var(--green));
+            background: linear-gradient(to right, var(--saffron), var(--green));
         }
-        
-        .services-grid {
+
+        .cards-container {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
             gap: 30px;
         }
-        
-        .service-card {
-            background-color: white;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-            transition: transform 0.3s, box-shadow 0.3s;
-            border-top: 4px solid var(--saffron);
-        }
-        
-        .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
-        }
-        
-        .service-card:nth-child(2) {
-            border-top-color: var(--white);
-            border-top: 4px solid var(--white);
-            background: linear-gradient(to bottom right, #f8f8f8, #ffffff);
-        }
-        
-        .service-card:nth-child(3) {
-            border-top-color: var(--green);
-        }
-        
-        .service-icon {
-            font-size: 40px;
-            color: var(--navy-blue);
-            margin: 25px 0 15px;
-            text-align: center;
-        }
-        
-        .service-card h3 {
-            text-align: center;
-            margin-bottom: 15px;
-            color: var(--navy-blue);
-            padding: 0 15px;
-        }
-        
-        .service-card p {
-            padding: 0 20px 20px;
-            text-align: center;
-            color: #666;
-        }
-        
-        /* Application Form */
-        .application {
-            padding: 80px 0;
-            background-color: var(--light-blue);
-        }
-        
-        .form-container {
-            max-width: 800px;
-            margin: 0 auto;
+
+        .category-card {
             background-color: white;
             border-radius: 10px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
             overflow: hidden;
-        }
-        
-        .form-header {
-            background: linear-gradient(to right, var(--saffron), var(--white), var(--green));
-            padding: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.4s ease;
             text-align: center;
-            color: var(--navy-blue);
+            padding: 40px 25px;
         }
-        
-        .form-body {
-            padding: 30px;
+
+        .category-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
         }
-        
-        .form-group {
-            margin-bottom: 25px;
-        }
-        
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 500;
-            color: var(--navy-blue);
-        }
-        
-        .form-control {
-            width: 100%;
-            padding: 12px 15px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            font-family: 'Roboto', sans-serif;
-            font-size: 16px;
-            transition: border 0.3s;
-        }
-        
-        .form-control:focus {
-            outline: none;
-            border-color: var(--navy-blue);
-            box-shadow: 0 0 0 2px rgba(0, 0, 128, 0.1);
-        }
-        
-        .form-row {
-            display: flex;
-            gap: 20px;
-        }
-        
-        .form-row .form-group {
-            flex: 1;
-        }
-        
-        .visa-types {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-            margin-top: 10px;
-        }
-        
-        .visa-type {
-            flex: 1;
-            min-width: 150px;
-            text-align: center;
-            padding: 15px 10px;
-            border: 2px solid #ddd;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-        
-        .visa-type:hover {
-            border-color: var(--navy-blue);
-        }
-        
-        .visa-type.selected {
-            border-color: var(--navy-blue);
-            background-color: rgba(0, 0, 128, 0.05);
-        }
-        
-        .visa-type i {
-            font-size: 24px;
-            margin-bottom: 10px;
-            color: var(--navy-blue);
-        }
-        
-        .upload-box {
-            border: 2px dashed #ddd;
-            border-radius: 5px;
-            padding: 30px;
-            text-align: center;
-            cursor: pointer;
-            transition: border 0.3s;
-        }
-        
-        .upload-box:hover {
-            border-color: var(--navy-blue);
-        }
-        
-        .upload-box i {
-            font-size: 40px;
-            color: var(--navy-blue);
-            margin-bottom: 15px;
-        }
-        
-        .progress-container {
-            margin-top: 30px;
-        }
-        
-        .progress-bar {
-            height: 8px;
-            background-color: #e0e0e0;
-            border-radius: 4px;
-            overflow: hidden;
-            margin-bottom: 10px;
-        }
-        
-        .progress {
-            height: 100%;
-            background: linear-gradient(to right, var(--saffron), var(--green));
-            width: 0%;
-            transition: width 0.5s;
-        }
-        
-        .progress-text {
-            display: flex;
-            justify-content: space-between;
-            font-size: 14px;
-            color: #666;
-        }
-        
-        /* Features Section */
-        .features {
-            padding: 80px 0;
-            background-color: white;
-        }
-        
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 30px;
-        }
-        
-        .feature-card {
-            display: flex;
-            gap: 20px;
-            align-items: flex-start;
-        }
-        
-        .feature-icon {
-            background: linear-gradient(to right, var(--saffron), var(--green));
-            color: white;
-            width: 60px;
-            height: 60px;
+
+        .card-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
+            background: linear-gradient(135deg, var(--saffron), var(--green));
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 24px;
-            flex-shrink: 0;
+            color: white;
+            font-size: 32px;
         }
-        
-        .feature-content h3 {
+
+        .category-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--navy);
+        }
+
+        /* Why Choose Us */
+        .why-us {
+            background: linear-gradient(135deg, rgba(255, 153, 51, 0.05) 0%, rgba(19, 136, 8, 0.05) 100%);
+            position: relative;
+        }
+
+        .stats-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 30px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--saffron);
             margin-bottom: 10px;
-            color: var(--navy-blue);
+            font-family: 'Playfair Display', serif;
         }
-        
+
+        .stat-item p {
+            font-size: 1.1rem;
+            color: var(--dark);
+        }
+
+        /* Destinations */
+        .destinations-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .destination-card {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            height: 250px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .destination-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .destination-card:hover .destination-img {
+            transform: scale(1.1);
+        }
+
+        .destination-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+            color: white;
+        }
+
+        .destination-overlay h3 {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+
+        /* Application Form */
+        .application-form {
+            background-color: var(--gray);
+        }
+
+        .form-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 50px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 14px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+            font-family: 'Montserrat', sans-serif;
+            transition: border 0.3s ease;
+        }
+
+        .form-control:focus {
+            border-color: var(--saffron);
+            outline: none;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        #form-message {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 4px;
+            display: none;
+        }
+
+        .success {
+            background-color: rgba(19, 136, 8, 0.1);
+            color: var(--green);
+            border: 1px solid var(--green);
+        }
+
+        .error {
+            background-color: rgba(255, 0, 0, 0.1);
+            color: red;
+            border: 1px solid red;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            background-color: white;
+        }
+
+        .testimonial-slider {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .testimonial-track {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .testimonial-slide {
+            min-width: 100%;
+            padding: 30px;
+            background-color: var(--gray);
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .client-img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 20px;
+            border: 4px solid var(--saffron);
+        }
+
+        .client-name {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--navy);
+            margin-bottom: 5px;
+        }
+
+        .client-location {
+            color: var(--saffron);
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            line-height: 1.8;
+        }
+
+        .slider-dots {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: #ddd;
+            margin: 0 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .dot.active {
+            background-color: var(--saffron);
+        }
+
         /* Footer */
         footer {
-            background: linear-gradient(to right, var(--saffron), var(--white), var(--green));
-            color: var(--dark-gray);
-            padding: 60px 0 30px;
+            background: linear-gradient(to right, var(--navy), var(--dark));
+            color: white;
+            padding: 70px 0 30px;
         }
-        
-        .footer-content {
+
+        .footer-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 40px;
-            margin-bottom: 40px;
+            margin-bottom: 50px;
         }
-        
-        .footer-column h3 {
-            color: var(--navy-blue);
+
+        .footer-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            font-weight: 700;
             margin-bottom: 20px;
-            font-size: 20px;
+            color: white;
         }
-        
-        .footer-links {
+
+        .footer-logo span {
+            color: var(--saffron);
+        }
+
+        .footer-about p {
+            margin-bottom: 20px;
+            opacity: 0.8;
+        }
+
+        .footer-heading {
+            font-size: 1.3rem;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-heading::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background-color: var(--saffron);
+        }
+
+        .footer-links ul {
             list-style: none;
         }
-        
-        .footer-links li {
-            margin-bottom: 10px;
+
+        .footer-links ul li {
+            margin-bottom: 12px;
         }
-        
-        .footer-links li a:hover {
-            color: var(--navy-blue);
+
+        .footer-links ul li a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .footer-links ul li a:hover {
+            color: var(--saffron);
             padding-left: 5px;
-            transition: all 0.3s;
         }
-        
-        .contact-info {
-            list-style: none;
-        }
-        
-        .contact-info li {
+
+        .contact-info p {
             margin-bottom: 15px;
             display: flex;
-            align-items: flex-start;
-            gap: 10px;
+            align-items: center;
+            opacity: 0.8;
         }
-        
+
         .contact-info i {
-            color: var(--navy-blue);
-            margin-top: 3px;
+            margin-right: 10px;
+            color: var(--saffron);
         }
-        
+
         .social-icons {
             display: flex;
             gap: 15px;
             margin-top: 20px;
         }
-        
+
         .social-icons a {
             display: inline-flex;
             align-items: center;
             justify-content: center;
             width: 40px;
             height: 40px;
-            background-color: var(--navy-blue);
-            color: white;
             border-radius: 50%;
-            transition: all 0.3s;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+            font-size: 18px;
+            transition: all 0.3s ease;
         }
-        
+
         .social-icons a:hover {
-            transform: translateY(-3px);
             background-color: var(--saffron);
+            transform: translateY(-3px);
         }
-        
+
         .copyright {
             text-align: center;
             padding-top: 30px;
-            border-top: 1px solid rgba(0, 0, 0, 0.1);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
             font-size: 14px;
-            color: #555;
+            opacity: 0.7;
         }
-        
-        /* Responsive Styles */
+
+        /* WhatsApp Button */
+        .whatsapp-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background-color: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 32px;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.5);
+            z-index: 999;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .whatsapp-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 25px rgba(37, 211, 102, 0.7);
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            background-color: white;
+            width: 90%;
+            max-width: 600px;
+            border-radius: 10px;
+            padding: 40px;
+            position: relative;
+            animation: modalFade 0.3s ease;
+        }
+
+        @keyframes modalFade {
+            from {opacity: 0; transform: translateY(-50px);}
+            to {opacity: 1; transform: translateY(0);}
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 20px;
+            right: 25px;
+            font-size: 28px;
+            cursor: pointer;
+            color: var(--dark);
+            transition: color 0.3s ease;
+        }
+
+        .close-modal:hover {
+            color: var(--saffron);
+        }
+
+        /* Responsive Design */
         @media (max-width: 992px) {
             .hero h1 {
-                font-size: 36px;
+                font-size: 2.8rem;
             }
-            
-            .form-row {
-                flex-direction: column;
-                gap: 0;
+            .section-title h2 {
+                font-size: 2.2rem;
             }
         }
-        
+
         @media (max-width: 768px) {
-            nav ul {
-                display: none;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                width: 100%;
-                background-color: white;
-                flex-direction: column;
-                padding: 20px;
-                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-            }
-            
-            nav ul.active {
-                display: flex;
-            }
-            
             .mobile-menu-btn {
                 display: block;
             }
-            
-            .header-actions {
-                display: none;
+            nav ul {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background-color: white;
+                flex-direction: column;
+                align-items: center;
+                padding-top: 50px;
+                transition: left 0.3s ease;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             }
-            
+            nav ul.active {
+                left: 0;
+            }
+            nav ul li {
+                margin: 15px 0;
+            }
             .hero h1 {
-                font-size: 30px;
+                font-size: 2.2rem;
             }
-            
-            .hero p {
-                font-size: 16px;
-            }
-            
             .hero-btns {
                 flex-direction: column;
                 align-items: center;
+                gap: 15px;
             }
-            
             .hero-btns .btn {
-                width: 100%;
-                max-width: 250px;
+                width: 80%;
+                max-width: 300px;
             }
-            
-            .service-card, .feature-card {
-                margin-bottom: 20px;
+            .chakra-watermark {
+                width: 200px;
+                height: 200px;
             }
         }
-        
+
         @media (max-width: 576px) {
-            .hero-content {
-                padding: 20px;
-            }
-            
             .hero h1 {
-                font-size: 26px;
+                font-size: 1.8rem;
             }
-            
-            .section-title {
-                font-size: 24px;
+            .section-title h2 {
+                font-size: 1.8rem;
             }
-            
-            .form-body {
-                padding: 20px;
+            .form-container {
+                padding: 30px 20px;
             }
-            
-            .visa-type {
-                min-width: 100%;
+            .form-row {
+                grid-template-columns: 1fr;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Header Section -->
+    <!-- Header -->
     <header>
         <div class="container header-container">
-            <div class="logo">
-                <i class="fas fa-passport logo-icon"></i>
-                <div class="logo-text">India<span>Visa</span></div>
-            </div>
+            <a href="#" class="logo">
+                <i class="fas fa-passport"></i>
+                Visa<span>Sphere</span>
+            </a>
             
-            <div class="mobile-menu-btn">
+            <div class="mobile-menu-btn" id="mobileMenuBtn">
                 <i class="fas fa-bars"></i>
             </div>
             
             <nav>
-                <ul>
+                <ul id="navMenu">
                     <li><a href="#home">Home</a></li>
-                    <li><a href="#services">Visa Services</a></li>
+                    <li><a href="#categories">Services</a></li>
+                    <li><a href="#why-us">Why Us</a></li>
+                    <li><a href="#destinations">Destinations</a></li>
                     <li><a href="#application">Apply Now</a></li>
-                    <li><a href="#features">Features</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
-            
-            <div class="header-actions">
-                <button class="btn btn-outline">Track Application</button>
-                <button class="btn btn-primary">Login</button>
-            </div>
         </div>
     </header>
 
     <!-- Hero Section -->
     <section class="hero" id="home">
-        <!-- Background Video -->
-        <video autoplay muted loop class="video-background">
-            <source src="https://assets.mixkit.co/videos/preview/mixkit-indian-monument-with-blue-sky-4153-large.mp4" type="video/mp4">
-            Your browser does not support the video tag.
+        <video class="hero-video" autoplay muted loop playsinline>
+            <source src="https://assets.mixkit.co/videos/preview/mixkit-airplane-flying-in-a-cloudy-sky-2715-large.mp4" type="video/mp4">
         </video>
-        <div class="flag-overlay"></div>
+        <div class="hero-overlay"></div>
+        
+        <div class="chakra-watermark">
+            <svg viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="1"/>
+                <circle cx="12" cy="12" r="1" fill="currentColor"/>
+                <path d="M12,2 L12,22 M2,12 L22,12" stroke="currentColor" stroke-width="1"/>
+                <path d="M12,2 A10,10 0 0,1 22,12 A10,10 0 0,1 12,22 A10,10 0 0,1 2,12 A10,10 0 0,1 12,2" fill="none" stroke="currentColor" stroke-width="1"/>
+            </svg>
+        </div>
         
         <div class="hero-content">
-            <h1>Welcome to Indian Visa Application Portal</h1>
-            <p>Apply for your Indian visa online with our streamlined process. Tourist, business, medical, and other visa types available. Experience the incredible diversity of India with an easy visa application process.</p>
+            <h1>India's Trusted Visa & Immigration Experts</h1>
+            <p>With over 12 years of experience and 5000+ successful visas, we provide end-to-end visa solutions for students, professionals, and families seeking opportunities abroad.</p>
             <div class="hero-btns">
-                <button class="btn btn-primary">Apply for Visa Now</button>
-                <button class="btn btn-outline" style="color: white; border-color: white;">Check Requirements</button>
+                <a href="#application" class="btn btn-primary">Apply for Visa</a>
+                <button class="btn btn-secondary" id="consultationBtn">Book Free Consultation</button>
             </div>
         </div>
     </section>
 
-    <!-- Visa Services Section -->
-    <section class="services" id="services">
+    <!-- Visa Categories -->
+    <section id="categories">
         <div class="container">
-            <h2 class="section-title">Visa Services</h2>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-umbrella-beach"></i>
-                    </div>
-                    <h3>Tourist Visa</h3>
-                    <p>Explore India's rich cultural heritage, stunning landscapes, and historical monuments with our tourist visa.</p>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-briefcase"></i>
-                    </div>
-                    <h3>Business Visa</h3>
-                    <p>Conduct business meetings, conferences, and explore investment opportunities in India.</p>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-user-md"></i>
-                    </div>
-                    <h3>Medical Visa</h3>
-                    <p>Seek medical treatment in India's world-class hospitals and healthcare facilities.</p>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-icon">
+            <div class="section-title">
+                <h2>Visa Categories</h2>
+                <p>Explore our comprehensive visa services tailored to your needs</p>
+            </div>
+            
+            <div class="cards-container">
+                <div class="category-card">
+                    <div class="card-icon">
                         <i class="fas fa-graduation-cap"></i>
                     </div>
-                    <h3>Student Visa</h3>
-                    <p>Pursue education in India's renowned universities and educational institutions.</p>
+                    <h3>Study Visa</h3>
+                    <p>Pursue your education at top international universities with our expert guidance.</p>
+                </div>
+                
+                <div class="category-card">
+                    <div class="card-icon">
+                        <i class="fas fa-plane"></i>
+                    </div>
+                    <h3>Tourist Visa</h3>
+                    <p>Explore the world with our hassle-free tourist visa processing services.</p>
+                </div>
+                
+                <div class="category-card">
+                    <div class="card-icon">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <h3>Work Visa</h3>
+                    <p>Advance your career globally with our professional work visa assistance.</p>
+                </div>
+                
+                <div class="category-card">
+                    <div class="card-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3>PR / Migration</h3>
+                    <p>Make your dream of permanent residency a reality with our proven strategies.</p>
+                </div>
+                
+                <div class="category-card">
+                    <div class="card-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Business Visa</h3>
+                    <p>Expand your business horizons with our specialized business visa services.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Application Form Section -->
-    <section class="application" id="application">
+    <!-- Why Choose Us -->
+    <section class="why-us" id="why-us">
         <div class="container">
-            <h2 class="section-title">Visa Application Form</h2>
-            <div class="form-container">
-                <div class="form-header">
-                    <h2>Online Visa Application</h2>
-                    <p>Fill in your details to apply for an Indian visa</p>
+            <div class="section-title">
+                <h2>Why Choose Us</h2>
+                <p>Our track record speaks for itself</p>
+            </div>
+            
+            <div class="stats-container">
+                <div class="stat-item">
+                    <div class="stat-number" data-count="5000">0</div>
+                    <p>Visas Approved</p>
                 </div>
                 
-                <div class="form-body">
+                <div class="stat-item">
+                    <div class="stat-number" data-count="12">0</div>
+                    <p>Years Experience</p>
+                </div>
+                
+                <div class="stat-item">
+                    <div class="stat-number" data-count="25">0</div>
+                    <p>Countries</p>
+                </div>
+                
+                <div class="stat-item">
+                    <div class="stat-number" data-count="99">0</div>
+                    <p>Success Rate</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Destinations -->
+    <section id="destinations">
+        <div class="container">
+            <div class="section-title">
+                <h2>Popular Destinations</h2>
+                <p>Top countries our clients choose for study, work and migration</p>
+            </div>
+            
+            <div class="destinations-container">
+                <div class="destination-card">
+                    <img src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Canada" class="destination-img">
+                    <div class="destination-overlay">
+                        <h3>Canada</h3>
+                        <p>Study, Work & PR Opportunities</p>
+                    </div>
+                </div>
+                
+                <div class="destination-card">
+                    <img src="https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Australia" class="destination-img">
+                    <div class="destination-overlay">
+                        <h3>Australia</h3>
+                        <p>Quality Education & Work Visas</p>
+                    </div>
+                </div>
+                
+                <div class="destination-card">
+                    <img src="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="UK" class="destination-img">
+                    <div class="destination-overlay">
+                        <h3>United Kingdom</h3>
+                        <p>World-Class Universities</p>
+                    </div>
+                </div>
+                
+                <div class="destination-card">
+                    <img src="https://images.unsplash.com/photo-1501594907352-04cda38ebc29?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="USA" class="destination-img">
+                    <div class="destination-overlay">
+                        <h3>United States</h3>
+                        <p>Work & Business Visas</p>
+                    </div>
+                </div>
+                
+                <div class="destination-card">
+                    <img src="https://images.unsplash.com/photo-1467269204594-9661b134dd2b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Germany" class="destination-img">
+                    <div class="destination-overlay">
+                        <h3>Germany</h3>
+                        <p>Free Education & Job Opportunities</p>
+                    </div>
+                </div>
+                
+                <div class="destination-card">
+                    <img src="https://images.unsplash.com/photo-1507699622108-4be3abd695ad?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="New Zealand" class="destination-img">
+                    <div class="destination-overlay">
+                        <h3>New Zealand</h3>
+                        <p>Skilled Migration & Study</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Application Form -->
+    <section class="application-form" id="application">
+        <div class="container">
+            <div class="section-title">
+                <h2>Online Application Form</h2>
+                <p>Start your visa journey with us today</p>
+            </div>
+            
+            <div class="form-container">
+                <form id="visaForm">
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="firstName">First Name</label>
-                            <input type="text" id="firstName" class="form-control" placeholder="Enter your first name">
+                            <label for="fullname">Full Name *</label>
+                            <input type="text" id="fullname" class="form-control" required>
                         </div>
+                        
                         <div class="form-group">
-                            <label for="lastName">Last Name</label>
-                            <input type="text" id="lastName" class="form-control" placeholder="Enter your last name">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" class="form-control" required>
                         </div>
                     </div>
                     
-                    <div class="form-group">
-                        <label for="email">Email Address</label>
-                        <input type="email" id="email" class="form-control" placeholder="Enter your email address">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="nationality">Nationality</label>
-                        <select id="nationality" class="form-control">
-                            <option value="">Select your nationality</option>
-                            <option value="us">United States</option>
-                            <option value="uk">United Kingdom</option>
-                            <option value="ca">Canada</option>
-                            <option value="au">Australia</option>
-                            <option value="de">Germany</option>
-                            <option value="fr">France</option>
-                            <option value="other">Other</option>
-                        </select>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label>Visa Type</label>
-                        <div class="visa-types">
-                            <div class="visa-type" data-type="tourist">
-                                <i class="fas fa-umbrella-beach"></i>
-                                <div>Tourist</div>
-                            </div>
-                            <div class="visa-type" data-type="business">
-                                <i class="fas fa-briefcase"></i>
-                                <div>Business</div>
-                            </div>
-                            <div class="visa-type" data-type="medical">
-                                <i class="fas fa-user-md"></i>
-                                <div>Medical</div>
-                            </div>
-                            <div class="visa-type" data-type="student">
-                                <i class="fas fa-graduation-cap"></i>
-                                <div>Student</div>
-                            </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="phone">Phone Number *</label>
+                            <input type="tel" id="phone" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="visaType">Visa Type *</label>
+                            <select id="visaType" class="form-control" required>
+                                <option value="">Select Visa Type</option>
+                                <option value="Study Visa">Study Visa</option>
+                                <option value="Tourist Visa">Tourist Visa</option>
+                                <option value="Work Visa">Work Visa</option>
+                                <option value="PR / Migration">PR / Migration</option>
+                                <option value="Business Visa">Business Visa</option>
+                            </select>
                         </div>
                     </div>
                     
-                    <div class="form-group">
-                        <label>Upload Documents</label>
-                        <div class="upload-box">
-                            <i class="fas fa-cloud-upload-alt"></i>
-                            <p>Click to upload your passport and photo</p>
-                            <p style="font-size: 14px; color: #666;">Supports JPG, PNG, PDF up to 5MB</p>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="destination">Destination Country *</label>
+                            <select id="destination" class="form-control" required>
+                                <option value="">Select Country</option>
+                                <option value="Canada">Canada</option>
+                                <option value="Australia">Australia</option>
+                                <option value="United Kingdom">United Kingdom</option>
+                                <option value="United States">United States</option>
+                                <option value="Germany">Germany</option>
+                                <option value="New Zealand">New Zealand</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="passport">Upload Passport (PDF/Image) *</label>
+                            <input type="file" id="passport" class="form-control" accept=".pdf,.jpg,.jpeg,.png" required>
                         </div>
                     </div>
                     
-                    <div class="progress-container">
-                        <div class="progress-bar">
-                            <div class="progress" id="applicationProgress"></div>
-                        </div>
-                        <div class="progress-text">
-                            <span>Application Progress</span>
-                            <span id="progressPercent">0%</span>
-                        </div>
-                    </div>
+                    <button type="submit" class="btn btn-primary" style="width: 100%; padding: 16px;">Submit Application</button>
                     
-                    <div style="text-align: center; margin-top: 30px;">
-                        <button class="btn btn-primary" id="submitApplication" style="padding: 15px 40px;">Submit Application</button>
-                    </div>
-                </div>
+                    <div id="form-message"></div>
+                </form>
             </div>
         </div>
     </section>
 
-    <!-- Features Section -->
-    <section class="features" id="features">
+    <!-- Testimonials -->
+    <section class="testimonials">
         <div class="container">
-            <h2 class="section-title">Why Choose Our Visa Service</h2>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-clock"></i>
+            <div class="section-title">
+                <h2>Client Testimonials</h2>
+                <p>Hear from our satisfied clients</p>
+            </div>
+            
+            <div class="testimonial-slider">
+                <div class="testimonial-track" id="testimonialTrack">
+                    <div class="testimonial-slide">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Client" class="client-img">
+                        <h4 class="client-name">Rahul Sharma</h4>
+                        <p class="client-location">Mumbai → Toronto</p>
+                        <p class="testimonial-text">"VisaSphere made my Canadian PR process seamless. Their guidance at every step was invaluable. I'm now settled in Toronto with my family. Highly recommended!"</p>
                     </div>
-                    <div class="feature-content">
-                        <h3>Fast Processing</h3>
-                        <p>Get your visa processed in as little as 24-72 hours with our expedited service options.</p>
+                    
+                    <div class="testimonial-slide">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Client" class="client-img">
+                        <h4 class="client-name">Priya Patel</h4>
+                        <p class="client-location">Delhi → Melbourne</p>
+                        <p class="testimonial-text">"I got my student visa for Australia within 3 weeks thanks to VisaSphere. Their documentation support was exceptional. Now pursuing my Masters at Melbourne University."</p>
                     </div>
-                </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
-                    <div class="feature-content">
-                        <h3>Secure & Safe</h3>
-                        <p>Your personal information is protected with bank-level encryption and security protocols.</p>
-                    </div>
-                </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-headset"></i>
-                    </div>
-                    <div class="feature-content">
-                        <h3>24/7 Support</h3>
-                        <p>Our visa experts are available round-the-clock to assist with your application process.</p>
+                    
+                    <div class="testimonial-slide">
+                        <img src="https://randomuser.me/api/portraits/men/65.jpg" alt="Client" class="client-img">
+                        <h4 class="client-name">Arun Kumar</h4>
+                        <p class="client-location">Bangalore → London</p>
+                        <p class="testimonial-text">"The team at VisaSphere helped me secure a UK work visa when I thought it was impossible. Their expertise and personalized approach made all the difference."</p>
                     </div>
                 </div>
                 
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-mobile-alt"></i>
-                    </div>
-                    <div class="feature-content">
-                        <h3>Mobile Friendly</h3>
-                        <p>Complete your visa application on any device - smartphone, tablet, or computer.</p>
-                    </div>
+                <div class="slider-dots" id="sliderDots">
+                    <span class="dot active" data-slide="0"></span>
+                    <span class="dot" data-slide="1"></span>
+                    <span class="dot" data-slide="2"></span>
                 </div>
             </div>
         </div>
@@ -865,130 +1066,296 @@
     <!-- Footer -->
     <footer id="contact">
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-column">
-                    <h3>Indian Visa Portal</h3>
-                    <p>Official portal for visa applications to India. Providing streamlined, secure, and efficient visa processing services for travelers worldwide.</p>
+            <div class="footer-container">
+                <div class="footer-about">
+                    <h3 class="footer-logo">Visa<span>Sphere</span></h3>
+                    <p>India's leading visa consultancy with over 12 years of experience in providing end-to-end immigration solutions for individuals and families.</p>
                     <div class="social-icons">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
                         <a href="#"><i class="fab fa-instagram"></i></a>
                         <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
                 
-                <div class="footer-column">
-                    <h3>Quick Links</h3>
-                    <ul class="footer-links">
+                <div class="footer-links">
+                    <h4 class="footer-heading">Quick Links</h4>
+                    <ul>
                         <li><a href="#home">Home</a></li>
-                        <li><a href="#services">Visa Services</a></li>
-                        <li><a href="#application">Apply for Visa</a></li>
-                        <li><a href="#features">Features</a></li>
-                        <li><a href="#">Track Application</a></li>
+                        <li><a href="#categories">Services</a></li>
+                        <li><a href="#why-us">Why Choose Us</a></li>
+                        <li><a href="#destinations">Destinations</a></li>
+                        <li><a href="#application">Apply Online</a></li>
                     </ul>
                 </div>
                 
-                <div class="footer-column">
-                    <h3>Contact Info</h3>
-                    <ul class="contact-info">
-                        <li>
-                            <i class="fas fa-map-marker-alt"></i>
-                            <div>Ministry of Home Affairs,<br>Visa Division, New Delhi, India</div>
-                        </li>
-                        <li>
-                            <i class="fas fa-phone"></i>
-                            <div>+91 11 1234 5678</div>
-                        </li>
-                        <li>
-                            <i class="fas fa-envelope"></i>
-                            <div>support@indianvisa.gov.in</div>
-                        </li>
-                    </ul>
+                <div class="contact-info">
+                    <h4 class="footer-heading">Contact Us</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Visa Plaza, Connaught Place, New Delhi, India</p>
+                    <p><i class="fas fa-phone"></i> +91 98765 43210</p>
+                    <p><i class="fas fa-envelope"></i> info@visasphere.com</p>
+                    <p><i class="fas fa-clock"></i> Mon-Sat: 9:00 AM - 7:00 PM</p>
                 </div>
             </div>
             
             <div class="copyright">
-                <p>&copy; 2023 Indian Visa Application Portal. All rights reserved.</p>
-                <p style="margin-top: 5px;">This is a demonstration website for educational purposes.</p>
+                <p>&copy; 2023 VisaSphere Consultancy. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
 
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/919876543210?text=Hello%20VisaSphere,%20I%20would%20like%20to%20know%20more%20about%20visa%20services" class="whatsapp-btn" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Consultation Modal -->
+    <div class="modal" id="consultationModal">
+        <div class="modal-content">
+            <span class="close-modal" id="closeModal">&times;</span>
+            <h2>Book Free Consultation</h2>
+            <p>Fill out the form below and our visa expert will contact you within 24 hours.</p>
+            
+            <form id="consultationForm" style="margin-top: 30px;">
+                <div class="form-group">
+                    <label for="consultName">Full Name *</label>
+                    <input type="text" id="consultName" class="form-control" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="consultEmail">Email Address *</label>
+                    <input type="email" id="consultEmail" class="form-control" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="consultPhone">Phone Number *</label>
+                    <input type="tel" id="consultPhone" class="form-control" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="consultCountry">Preferred Country</label>
+                    <select id="consultCountry" class="form-control">
+                        <option value="">Select Country</option>
+                        <option value="Canada">Canada</option>
+                        <option value="Australia">Australia</option>
+                        <option value="UK">United Kingdom</option>
+                        <option value="USA">United States</option>
+                        <option value="Germany">Germany</option>
+                        <option value="New Zealand">New Zealand</option>
+                    </select>
+                </div>
+                
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Book Consultation</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
     <script>
         // Mobile menu toggle
-        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
-            document.querySelector('nav ul').classList.toggle('active');
+        document.getElementById('mobileMenuBtn').addEventListener('click', function() {
+            document.getElementById('navMenu').classList.toggle('active');
+            this.querySelector('i').classList.toggle('fa-bars');
+            this.querySelector('i').classList.toggle('fa-times');
         });
-        
-        // Visa type selection
-        const visaTypes = document.querySelectorAll('.visa-type');
-        visaTypes.forEach(type => {
-            type.addEventListener('click', function() {
-                // Remove selected class from all visa types
-                visaTypes.forEach(t => t.classList.remove('selected'));
-                // Add selected class to clicked visa type
-                this.classList.add('selected');
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('#navMenu a').forEach(link => {
+            link.addEventListener('click', function() {
+                document.getElementById('navMenu').classList.remove('active');
+                document.querySelector('#mobileMenuBtn i').classList.remove('fa-times');
+                document.querySelector('#mobileMenuBtn i').classList.add('fa-bars');
             });
         });
-        
-        // Form submission
-        document.getElementById('submitApplication').addEventListener('click', function() {
-            // Get form values
-            const firstName = document.getElementById('firstName').value;
-            const lastName = document.getElementById('lastName').value;
-            const email = document.getElementById('email').value;
-            const nationality = document.getElementById('nationality').value;
+
+        // Consultation modal
+        const consultationBtn = document.getElementById('consultationBtn');
+        const consultationModal = document.getElementById('consultationModal');
+        const closeModal = document.getElementById('closeModal');
+
+        consultationBtn.addEventListener('click', function() {
+            consultationModal.style.display = 'flex';
+        });
+
+        closeModal.addEventListener('click', function() {
+            consultationModal.style.display = 'none';
+        });
+
+        window.addEventListener('click', function(event) {
+            if (event.target === consultationModal) {
+                consultationModal.style.display = 'none';
+            }
+        });
+
+        // Animated counters
+        function animateCounters() {
+            const counters = document.querySelectorAll('.stat-number');
             
-            // Validate form
-            if (!firstName || !lastName || !email || !nationality) {
+            counters.forEach(counter => {
+                const target = parseInt(counter.getAttribute('data-count'));
+                const increment = target / 200;
+                let current = 0;
+                
+                const updateCounter = () => {
+                    if (current < target) {
+                        current += increment;
+                        counter.textContent = Math.ceil(current) + (counter.getAttribute('data-count') === '99' ? '%' : '+');
+                        setTimeout(updateCounter, 10);
+                    } else {
+                        counter.textContent = target + (counter.getAttribute('data-count') === '99' ? '%' : '+');
+                    }
+                };
+                
+                updateCounter();
+            });
+        }
+
+        // Intersection Observer for counters
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounters();
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        const whyUsSection = document.querySelector('.why-us');
+        if (whyUsSection) {
+            observer.observe(whyUsSection);
+        }
+
+        // Visa form validation
+        document.getElementById('visaForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Simple validation
+            const fullname = document.getElementById('fullname').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+            const visaType = document.getElementById('visaType').value;
+            const destination = document.getElementById('destination').value;
+            const passport = document.getElementById('passport').value;
+            
+            const messageDiv = document.getElementById('form-message');
+            
+            if (!fullname || !email || !phone || !visaType || !destination || !passport) {
+                messageDiv.textContent = 'Please fill in all required fields.';
+                messageDiv.className = 'error';
+                messageDiv.style.display = 'block';
+                return;
+            }
+            
+            if (!validateEmail(email)) {
+                messageDiv.textContent = 'Please enter a valid email address.';
+                messageDiv.className = 'error';
+                messageDiv.style.display = 'block';
+                return;
+            }
+            
+            if (!validatePhone(phone)) {
+                messageDiv.textContent = 'Please enter a valid 10-digit phone number.';
+                messageDiv.className = 'error';
+                messageDiv.style.display = 'block';
+                return;
+            }
+            
+            // Simulate form submission
+            messageDiv.textContent = 'Thank you! Your application has been submitted successfully. Our visa expert will contact you within 24 hours.';
+            messageDiv.className = 'success';
+            messageDiv.style.display = 'block';
+            
+            // Reset form
+            setTimeout(() => {
+                document.getElementById('visaForm').reset();
+                messageDiv.style.display = 'none';
+            }, 5000);
+        });
+
+        // Consultation form validation
+        document.getElementById('consultationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('consultName').value.trim();
+            const email = document.getElementById('consultEmail').value.trim();
+            const phone = document.getElementById('consultPhone').value.trim();
+            
+            if (!name || !email || !phone) {
                 alert('Please fill in all required fields.');
                 return;
             }
             
-            // Check if visa type is selected
-            const selectedVisa = document.querySelector('.visa-type.selected');
-            if (!selectedVisa) {
-                alert('Please select a visa type.');
+            if (!validateEmail(email)) {
+                alert('Please enter a valid email address.');
                 return;
             }
             
-            // Simulate application progress
-            const progressBar = document.getElementById('applicationProgress');
-            const progressPercent = document.getElementById('progressPercent');
-            let progress = 0;
+            if (!validatePhone(phone)) {
+                alert('Please enter a valid 10-digit phone number.');
+                return;
+            }
             
-            // Animate progress bar
-            const interval = setInterval(() => {
-                progress += 5;
-                progressBar.style.width = progress + '%';
-                progressPercent.textContent = progress + '%';
-                
-                if (progress >= 100) {
-                    clearInterval(interval);
-                    // Show success message after progress completes
-                    setTimeout(() => {
-                        alert(`Thank you ${firstName} ${lastName}! Your ${selectedVisa.dataset.type} visa application has been submitted successfully. You will receive a confirmation email at ${email}.`);
-                        
-                        // Reset form
-                        document.querySelectorAll('.form-control').forEach(input => {
-                            input.value = '';
-                        });
-                        visaTypes.forEach(t => t.classList.remove('selected'));
-                        progressBar.style.width = '0%';
-                        progressPercent.textContent = '0%';
-                    }, 500);
-                }
-            }, 100);
+            alert('Thank you! Your consultation has been booked. We will contact you within 24 hours.');
+            consultationModal.style.display = 'none';
+            document.getElementById('consultationForm').reset();
+        });
+
+        // Helper validation functions
+        function validateEmail(email) {
+            const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return re.test(email);
+        }
+
+        function validatePhone(phone) {
+            const re = /^\d{10}$/;
+            return re.test(phone);
+        }
+
+        // Testimonial slider
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.testimonial-slide');
+        const dots = document.querySelectorAll('.dot');
+        const track = document.getElementById('testimonialTrack');
+        
+        function showSlide(index) {
+            if (index >= slides.length) currentSlide = 0;
+            if (index < 0) currentSlide = slides.length - 1;
+            
+            track.style.transform = `translateX(-${currentSlide * 100}%)`;
+            
+            dots.forEach((dot, i) => {
+                dot.classList.toggle('active', i === currentSlide);
+            });
+        }
+        
+        dots.forEach(dot => {
+            dot.addEventListener('click', function() {
+                currentSlide = parseInt(this.getAttribute('data-slide'));
+                showSlide(currentSlide);
+            });
         });
         
-        // Upload box interaction
-        document.querySelector('.upload-box').addEventListener('click', function() {
-            // In a real application, this would trigger a file input dialog
-            // For demo purposes, we'll just show a message
-            alert('In a real application, this would open a file browser to select documents for upload.');
+        // Auto slide testimonials
+        setInterval(() => {
+            currentSlide++;
+            if (currentSlide >= slides.length) currentSlide = 0;
+            showSlide(currentSlide);
+        }, 5000);
+
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.backgroundColor = 'rgba(255, 255, 255, 0.98)';
+                header.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.1)';
+            } else {
+                header.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
+                header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+            }
         });
-        
-        // Smooth scrolling for anchor links
+
+        // Smooth scroll for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
@@ -998,9 +1365,6 @@
                 
                 const targetElement = document.querySelector(targetId);
                 if (targetElement) {
-                    // Close mobile menu if open
-                    document.querySelector('nav ul').classList.remove('active');
-                    
                     window.scrollTo({
                         top: targetElement.offsetTop - 80,
                         behavior: 'smooth'
@@ -1008,28 +1372,13 @@
                 }
             });
         });
-        
-        // Login button functionality
-        document.querySelector('.header-actions .btn-primary').addEventListener('click', function() {
-            alert('Login functionality would be implemented here. In a real application, this would open a login modal or redirect to a login page.');
-        });
-        
-        // Track Application button functionality
-        document.querySelector('.btn-outline').addEventListener('click', function() {
-            alert('Application tracking functionality would be implemented here. In a real application, this would open a tracking form.');
-        });
-        
-        // Apply for Visa Now button in hero section
-        document.querySelector('.hero-btns .btn-primary').addEventListener('click', function() {
-            // Scroll to application form
-            document.querySelector('#application').scrollIntoView({
-                behavior: 'smooth'
-            });
-        });
-        
-        // Check Requirements button in hero section
-        document.querySelector('.hero-btns .btn-outline').addEventListener('click', function() {
-            alert('Visa requirement information would be displayed here. This could include documents needed, processing times, fees, and eligibility criteria.');
+
+        // Initialize counters on page load if why-us section is visible
+        window.addEventListener('load', function() {
+            const whyUsRect = whyUsSection.getBoundingClientRect();
+            if (whyUsRect.top < window.innerHeight && whyUsRect.bottom >= 0) {
+                animateCounters();
+            }
         });
     </script>
 </body>
